@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554862548",
+    "project_id": "mellow-mental-health",
+    "storage_bucket": "mellow-mental-health.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554862548:android:7644d8dcb1e60c9662f841",
+        "android_client_info": {
+          "package_name": "com.akshat.mellowapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeIT2_kZCh9Zvk-M7edyb-Xg0I2BooNts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
