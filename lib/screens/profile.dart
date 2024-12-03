@@ -1,7 +1,42 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+import '../services/auth_service.dart';
+
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+
+  final AuthService _authService = AuthService();
+
+  void _handleSignOut() async {
+    try {
+      await _authService.signOut();
+      // Redirect user to the login screen or perform any other necessary actions
+      Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+    } catch (e) {
+      // Show an error message to the user
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Error'),
+            content: Text(e.toString()),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +78,8 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context).pushReplacementNamed('/login');
-                            // Replace with actual navigation to login page
+                            // sign-out and redirect to the login page
+                            _handleSignOut();
                           },
                           child: const Text("Yes"),
                         ),

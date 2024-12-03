@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               "Mellow",
-              style: GoogleFonts.calligraffitti(
+              style: GoogleFonts.cedarvilleCursive(
                 textStyle: const TextStyle(
                   letterSpacing: 1.75,
                   fontSize: 28,
@@ -38,14 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            GestureDetector(
+            ),InkWell(
               onTap: (){
                 Navigator.pushNamed(context, '/profile');
               },
-                child: const CircleAvatar(radius: 22.0,backgroundColor: AppColors.background,)
-            ),
-          ],
+              child: const CircleAvatar(
+                radius: 22.0,
+                backgroundColor: AppColors.background,
+              ),
+            )
+        ],
         ),
         centerTitle: true,
       ),
